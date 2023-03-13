@@ -2,12 +2,18 @@
     --primary-color: #004dda;
     --dark: #5a5a5f;
     --light: #fff;
+    --grey: #c4c4c4;
     --default-pad: 2.5rem;
     --medium-pad: calc(var(--default-pad) / 2);
+    --small-pad: calc(var(--medium-pad) / 2);
+}
+
+html{
+    height: 100%;
 }
 
 html, body{
-    height: 100%;
+    
     margin: 0;
 }
 
@@ -15,6 +21,8 @@ body{
     font-family: Poppins, sans-serif;
     color: var(--dark);
     display: flex;
+    background-color: var(--grey);
+    min-height: 100%;
 }
 
 .topnav-menu, .menu{
@@ -24,17 +32,20 @@ body{
 }
 
 .menus{
-    padding: var(--default-pad);
-    
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.menu{
+    padding: var(--default-pad);
+}
 .mainnav{
     padding: var(--medium-pad) 0 0;
     display: flex;
     flex-direction: column;
+    background-color: var(--light);
 }
 
 .mainnav > a{
@@ -42,7 +53,6 @@ body{
 }
 
 .main-content{
-    background-color: #ccc;
     flex-grow: 1;
 }
 
@@ -61,4 +71,56 @@ body{
 
 main{
     padding: var(--default-pad);
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-pad)
+}
+
+.summary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--medium-pad);
+    background-color: var(--light);
+}
+
+.separate{
+    width: 1px;
+    border-left: 2px solid var(--grey);
+    align-self: stretch;
+}
+img{
+    width: 100%;
+}
+
+.btn{
+    background-color: var(--primary-color);
+    color: var(--light);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: var(--small-pad) var(--medium-pad)
+}
+
+.charts{
+    display: flex;
+    gap: var(--default-pad)
+}
+.chart{
+    flex-grow: 1;
+}
+
+.number{
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0 .5rem;
+}
+
+.menus .menu:first-child{
+    border-bottom: 1px solid var(--grey);
+}
+
+.menus .menu:last-child{
+    position: fixed;
+    left: var(--small-pad);
+    bottom: var(--medium-pad);
 }
